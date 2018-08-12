@@ -1,0 +1,66 @@
+
+CIRCUIT ELEMENT CURRENTS
+
+(Currents into element from indicated bus)
+
+Power Delivery Elements
+
+  Bus     Phase    Magnitude, A     Angle      (Real)   +j  (Imag)
+
+ELEMENT = "Vsource.SOURCE"
+SOURCEBUS     1           5.8805 /_  149.4 =    -5.0598 +j    2.9964
+------------
+SOURCEBUS     0           5.8805 /_  -30.6 =     5.0598 +j   -2.9964
+
+ELEMENT = "Vsource.SOURCE2"
+SOURCEBUS     2           5.8805 /_   29.4 =     5.1249 +j    2.8837
+------------
+SOURCEBUS     0           5.8805 /_ -150.6 =    -5.1249 +j   -2.8837
+
+ELEMENT = "Vsource.SOURCE3"
+SOURCEBUS     3           5.8805 /_  -90.6 =  -0.065073 +j   -5.8802
+------------
+SOURCEBUS     0           5.8805 /_   89.4 =   0.065073 +j    5.8802
+
+ELEMENT = "Transformer.SUB"
+SOURCEBUS     1           5.8805 /_  -30.6 =     5.0598 +j   -2.9964
+SOURCEBUS     2           5.8805 /_ -150.6 =    -5.1249 +j   -2.8837
+SOURCEBUS     3           5.8805 /_   89.4 =   0.065073 +j    5.8802
+SOURCEBUS     0      2.1354E-006 /_    5.0 =  2.1272E-006 +j 1.8696E-007
+SOURCEBUS Resid      1.6305E-014 /_  119.4 =   -7.9936E-015 +j 1.4211E-014
+------------
+SUBBUS        1           54.231 /_  149.4 =    -46.662 +j    27.633
+SUBBUS        2           54.231 /_   29.4 =     47.263 +j    26.594
+SUBBUS        3           54.231 /_  -90.6 =   -0.60003 +j   -54.228
+SUBBUS        0      1.9693E-005 /_ -175.0 =  -1.9618E-005 +j -1.7242E-006
+SUBBUS    Resid      7.5468E-013 /_  171.3 =   -7.4607E-013 +j 1.1369E-013
+
+ELEMENT = "Line.LINE1"
+SUBBUS        1           54.231 /_  -30.6 =     46.662 +j   -27.633
+SUBBUS        2           54.231 /_ -150.6 =    -47.263 +j   -26.594
+SUBBUS        3           54.231 /_   89.4 =    0.60003 +j    54.228
+SUBBUS    Resid      1.9693E-005 /_    5.0 =   1.9618E-005 +j 1.7242E-006
+------------
+LOADBUS1      1           54.265 /_  149.3 =     -46.66 +j    27.706
+LOADBUS1      2           54.266 /_   29.3 =     47.324 +j    26.556
+LOADBUS1      3           54.266 /_  -90.7 =   -0.66409 +j   -54.261
+LOADBUS1  Resid       3.284E-010 /_   -9.4 =   3.2401E-010 +j -5.3547E-011
+
+= = = = = = = = = = = = = = = = = = =  = = = = = = = = = = =  = =
+
+Power Conversion Elements
+
+  Bus     Phase    Magnitude, A     Angle      (Real)   +j  (Imag)
+
+ELEMENT = "Load.LOADA"
+LOADBUS1      1           31.344 /_   -0.7 =     31.342 +j  -0.36122
+LOADBUS1      2           31.344 /_  179.3 =    -31.342 +j   0.36122
+
+ELEMENT = "Load.LOADB"
+LOADBUS1      2           31.304 /_ -120.7 =    -15.982 +j   -26.917
+LOADBUS1      3           31.304 /_   59.3 =     15.982 +j    26.917
+
+ELEMENT = "Load.LOADC"
+LOADBUS1      1           31.343 /_  -60.7 =     15.318 +j   -27.344
+LOADBUS1      3           31.343 /_  119.3 =    -15.318 +j    27.344
+

@@ -1,0 +1,72 @@
+
+CIRCUIT ELEMENT POWER FLOW
+
+(Power Flow into element from indicated Bus)
+
+Power Delivery Elements
+
+  Bus     Phase     kW     +j   kvar         kVA         PF
+
+ELEMENT = "Vsource.SOURCE"
+SOURCEBUS     1      -335.9 +j   -198.9      390.4       0.8604
+   TERMINAL TOTAL .  -335.9 +j   -198.9      390.4       0.8604
+SOURCEBUS     0         0.0 +j      0.0        0.0       1.0000
+   TERMINAL TOTAL .     0.0 +j      0.0        0.0       1.0000
+
+ELEMENT = "Vsource.SOURCE2"
+SOURCEBUS     2      -335.9 +j   -198.9      390.4       0.8604
+   TERMINAL TOTAL .  -335.9 +j   -198.9      390.4       0.8604
+SOURCEBUS     0         0.0 +j      0.0        0.0       1.0000
+   TERMINAL TOTAL .     0.0 +j      0.0        0.0       1.0000
+
+ELEMENT = "Vsource.SOURCE3"
+SOURCEBUS     3      -335.9 +j   -198.9      390.4       0.8604
+   TERMINAL TOTAL .  -335.9 +j   -198.9      390.4       0.8604
+SOURCEBUS     0         0.0 +j      0.0        0.0       1.0000
+   TERMINAL TOTAL .     0.0 +j      0.0        0.0       1.0000
+
+ELEMENT = "Transformer.SUB"
+SOURCEBUS     1       335.9 +j    198.9      390.4       0.8604
+SOURCEBUS     2       335.9 +j    198.9      390.4       0.8604
+SOURCEBUS     3       335.9 +j    198.9      390.4       0.8604
+SOURCEBUS     0         0.0 +j      0.0        0.0       1.0000
+   TERMINAL TOTAL .  1007.8 +j    596.8     1171.3       0.8604
+SUBBUS        1      -335.0 +j   -182.9      381.7       0.8777
+SUBBUS        2      -335.0 +j   -182.9      381.7       0.8777
+SUBBUS        3      -335.0 +j   -182.9      381.7       0.8777
+SUBBUS        0         0.0 +j      0.0        0.0       1.0000
+   TERMINAL TOTAL . -1005.1 +j   -548.8     1145.2       0.8777
+
+ELEMENT = "Line.LINE1"
+SUBBUS        1       335.0 +j    182.9      381.7       0.8777
+SUBBUS        2       335.0 +j    182.9      381.7       0.8777
+SUBBUS        3       335.0 +j    182.9      381.7       0.8777
+   TERMINAL TOTAL .  1005.1 +j    548.8     1145.2       0.8777
+LOADBUS1      1      -333.0 +j   -179.8      378.5       0.8799
+LOADBUS1      2      -333.3 +j   -180.2      378.9       0.8797
+LOADBUS1      3      -333.7 +j   -179.8      379.0       0.8804
+   TERMINAL TOTAL . -1000.0 +j   -539.7     1136.3       0.8800
+
+= = = = = = = = = = = = = = = = = = =  = = = = = = = = = = =  = =
+
+Power Conversion Elements
+
+  Bus     Phase     kW   +j  kvar         kVA         PF
+
+ELEMENT = "Load.LOADA"
+LOADBUS1      1     218.5 +j   -6.4      218.6      -0.9996
+LOADBUS1      2     114.8 +j  186.3      218.8       0.5247
+  TERMINAL TOTAL  .   333.3 +j    179.9      378.8       0.8800
+
+ELEMENT = "Load.LOADB"
+LOADBUS1      2     218.5 +j   -6.1      218.6      -0.9996
+LOADBUS1      3     114.9 +j  186.0      218.6       0.5253
+  TERMINAL TOTAL  .   333.3 +j    179.9      378.8       0.8800
+
+ELEMENT = "Load.LOADC"
+LOADBUS1      1     114.5 +j  186.2      218.6       0.5239
+LOADBUS1      3     218.8 +j   -6.3      218.9      -0.9996
+  TERMINAL TOTAL  .   333.3 +j    179.9      378.8       0.8800
+
+
+Total Circuit Losses =    7.9 +j   57.1

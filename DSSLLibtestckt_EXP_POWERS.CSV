@@ -1,0 +1,8 @@
+Element, Terminal, P(kW), Q(kvar),  P_Normal, Q_Normal, P_Emergency, Q_Emergency
+"Transformer.SUB"       ,   1,      1007.9,       596.8,         0.0,         0.0,         0.0,         0.0
+"Transformer.SUB"       ,   2,     -1005.1,      -548.8
+"Line.LINE1"            ,   1,      1005.1,       548.8,         0.0,         0.0,         0.0,         0.0
+"Line.LINE1"            ,   2,     -1000.0,      -539.7
+"Load.LOADA"            ,   1,       333.3,       179.9
+"Load.LOADB"            ,   1,       333.3,       179.9
+"Load.LOADC"            ,   1,       333.3,       179.9

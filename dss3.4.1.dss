@@ -1,0 +1,51 @@
+Clear
+!edit the voltage source
+new object=circuit.DSSLLibtestckt
+ ~ basekv=66.395 pu=1.000 phases=1 bus1=SourceBus.1 Angle=0 MVASC1=21000  baseMVA=2
+New Vsource.Source2 basekv=66.395 pu=1.000 phases=1 bus1=SourceBus.2 Angle=240 MVASC1=21000 baseMVA=2
+ New Vsource.Source3 basekv=66.395 pu=1.000 phases=1 bus1=SourceBus.3 Angle=120 MVASC1=21000 baseMVA=2
+
+! define a linecode for the lines - unbalanced 336 MCM ACSR connection
+
+new linecode.336matrix nphases=3   ! horizontal flat construction
+~  rmatrix=(0.0868455 |  0.0298305 0.0887966 | 0.0288883 0.0298305  0.0868455) ! ohms per 1000 ft 
+~  xmatrix=(0.2025449 |  0.0847210 0.1961452 | 0.0719161 0.0847210  0.2025449)
+ ~  cmatrix=(2.74 | 0 2.74 | 0 0 2.74)  !nf per 1000 ft
+~ Normamps = 400  Emergamps=600
+
+
+! Substation transformer
+new transformer.sub phases=3 windings=2 buses=(SourceBus subbus) conns='wye wye' kvs="115, 12.47" kvas="2000 2000" XHL=7 
+
+! define the lines
+new line.line1 subbus   loadbus1 linecode=336matrix length=10 
+
+! define a load
+ new load.loada bus1=loadbus1.1.2 phases=1 kv=12.47  kw=333.3333 pf=0.88 
+ new load.loadb bus1=loadbus1.2.3 phases=1 kv=12.47  kw=333.3333 pf=0.88 
+ new load.loadc bus1=loadbus1.1.3 phases=1 kv=12.47  kw=333.3333 pf=0.88 
+
+! new load.loada bus1=loadbus1.1.4 phases=1 kv=7.1996  kva=378.5 pf=0.8799 
+! new load.loadb bus1=loadbus1.2.4 phases=1 kv=7.1996  kva=378.9 pf=0.8797
+! new load.loadc bus1=loadbus1.3.4 phases=1 kv=7.1996  kva=379.0 pf=0.8804
+
+! new load.loada bus1=loadbus1.1 phases=1 kv=7.1996  kva=500 pf=0.88
+! new load.loadb bus1=loadbus1.2 phases=1 kv=7.1996  kva=300 pf=0.88
+! new load.loadc bus1=loadbus1.3 phases=1 kv=7.1996  kva=400 pf=0.88
+
+! new load.loada bus1=loadbus1.1.2 phases=1 kv=12.47  kva=500 pf=0.88
+! new load.loadb bus1=loadbus1.2.3 phases=1 kv=12.47  kva=300 pf=0.88
+! new load.loadc bus1=loadbus1.1.3 phases=1 kv=12.47  kva=400 pf=0.88
+
+set voltagebases=[115, 12.47] 
+calcvoltagebases     ! **** let DSS compute voltage bases
+ solve
+
+! Various reports ...
+show voltages LN Nodes 
+show currents resid=yes elements  ! this shows sum of phase currents
+Show Powers kva Elements
+
+! makeposseq
+! solve
+! export Y
